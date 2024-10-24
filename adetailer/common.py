@@ -86,18 +86,15 @@ def get_models(
         model_paths.extend(scan_model_dir(Path(dir_)))
 
     models = OrderedDict()
-    to_download = [
-        "face_yolov8n.pt",
-        "face_yolov8s.pt",
-        "hand_yolov8n.pt",
-        "person_yolov8n-seg.pt",
-        "person_yolov8s-seg.pt",
-        "yolov8x-worldv2.pt",
-    ]
-    models.update(download_models(*to_download, check_remote=huggingface))
 
     models.update(
         {
+             "face_yolov8n.pt": "face_yolov8n.pt",
+            "face_yolov8s.pt": "face_yolov8s.pt",
+            "hand_yolov8n.pt": "hand_yolov8n.pt",
+            "person_yolov8n-seg.pt": "person_yolov8n-seg.pt",
+            "person_yolov8s-seg.pt": "person_yolov8s-seg.pt",
+            "yolov8x-worldv2.pt": "yolov8x-worldv2.pt",
             "mediapipe_face_full": "mediapipe_face_full",
             "mediapipe_face_short": "mediapipe_face_short",
             "mediapipe_face_mesh": "mediapipe_face_mesh",
